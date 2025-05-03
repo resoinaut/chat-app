@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+:root
+{
+	--cbackground: #101014;
+	--cforeground-100: #F6F6F6;
+	--cforeground-200: #A9A9AA;
+	--cforeground-300: #5D5D60;
+	--cforeground-400: #19191D;
+
+	--f-100: 1rem;
+	--f-200: 0.9375rem;
+
+	--w-100: 64px;
+	--w-200: 48px;
+	--w-300: 32px;
+	--w-350: 24px;
+	--w-375: 20px;
+	--w-400: 16px;
+}
+
+body
+{
+	background-color: var(--cbackground);
+
+	height: 100vh;
+	margin: 0;
+
+	display: flex;
+	justify-content: center;
+}
+
+div.messaging
+{
+	width: 100%;
+	margin: 0 32px;
+	max-width: 720px;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+}
+
+#messages
+{
+	display: flex;
+	flex-direction: column;
+}
+
+#messages > div.timestamp
+{
+	height: calc(3 * var(--w-300));
+
+	gap: 16px;
+	display: flex;
+	align-items: center;
+}
+
+#messages > div.timestamp div
+{
+	--stroke: 2px;
+
+	height: var(--stroke);
+	flex-grow: 1;
+	border-radius: var(--stroke);
+	background-color: var(--cforeground-400);
+}
+
+#messages > div.timestamp span
+{
+	color: var(--cforeground-300);
+	user-select: none;
+
+	font-size: var(--f-200);
+	font-weight: 500;
+	font-family: 'Poppins', sans-serif;
+}
+
+#messages > div.message
+{
+	margin: var(--w-400) 0;
+
+	gap: var(--w-350);
+	display: flex;
+}
+
+#messages > div.message div.pfp
+{
+	width: var(--w-200);
+	cursor: pointer;
+	aspect-ratio: 1/1;
+	border-radius: var(--w-375);
+}
+
+#messages > div.message div.content
+{
+	font-family: 'Poppins', sans-serif;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+#messages > div.message div.content div.account
+{
+	color: var(--cforeground-100);
+	width: max-content;
+	cursor: pointer;
+
+	font-size: var(--f-100);
+	font-weight: 600;
+}
+
+#messages > div.message div.content div.account:hover
+{
+	text-decoration: underline;
+}
+
+#messages > div.message div.content div.message
+{
+	color: var(--cforeground-200);
+	font-size: var(--f-200);
+}
+
+div.messaging > div.menu
+{
+	margin: 32px 0;
+
+	gap: var(--w-350);
+	display: flex;
+}
+
+div.messaging > div.menu div
+{
+	height: 64px;
+	border-radius: var(--w-400);
+	background-color: var(--cforeground-400);
+}
+
+div.messaging > div.menu div.message
+{
+	padding-left: var(--w-350);
+
+	display: flex;
+	flex-grow: 1;
+	justify-content: center;
+}
+
+div.messaging > div.menu div.message input
+{
+	color: var(--cforeground-100);
+	width: 100%;
+	border-style: none;
+	outline-style: none;
+	background-color: transparent;
+
+	font-size: var(--f-200);
+	font-family: 'Poppins', sans-serif;
+}
+
+div.messaging > div.menu div.message input::placeholder
+{
+	color: var(--cforeground-300);
+	user-select: none;
+}
+
+div.messaging > div.menu div.send
+{
+	cursor: pointer;
+	aspect-ratio: 1/1;
+	transition-duration: .2s;
+
+	display: grid;
+	place-items: center;
+}
+
+div.messaging > div.menu div.send svg
+{
+	width: var(--w-400);
+	stroke: var(--cforeground-100);
+	aspect-ratio: 1/1;
+}
+
+div.messaging > div.menu div.send:hover svg,
+div.messaging > div.menu div.send:active svg
+{
+	stroke: var(--cforeground-200);
+}
+
+div.messaging > div.menu div.send:active svg
+{
+	scale: 0.85;
+}
